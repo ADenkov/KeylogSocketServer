@@ -1,1 +1,1 @@
-web: python Socket.py
+web: gunicorn --worker-class eventlet -w 1 Socket:app
