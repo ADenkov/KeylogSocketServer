@@ -1,1 +1,1 @@
-python Socket.py
+worker: python Socket.py
