@@ -12,7 +12,6 @@ MarkupSafe==1.1.1
 pynput==1.7.3
 python-engineio==3.13.2
 python-socketio==4.6.0
-pywin32==301
 pyWinhook==1.6.2
 six==1.16.0
 Werkzeug==1.0.1
