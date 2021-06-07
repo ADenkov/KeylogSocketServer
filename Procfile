@@ -1,1 +1,1 @@
-web: gunicorn --worker-class eventlet -w 1 module:KeylogSocketServer
+gunicorn -k geventwebsocket.gunicorn.workers.GeventWebSocketWorker -w 1 module:Socket.py
