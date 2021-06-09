@@ -5,6 +5,8 @@ import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
+print(os.environ.get('PORT'))
+print(os.environ['PORT'])
 
 @socketio.on('keylogger')
 def test_connect(data):
@@ -12,6 +14,6 @@ def test_connect(data):
 
 
 if __name__ == '__main__':
+    socketio.run(app, port=int(os.environ.get('PORT', 5000)), debug=True)
     print(os.environ.get('PORT'))
     print(os.environ['PORT'])
-    socketio.run(app, port=int(os.environ.get('PORT', 5000)), debug=True)
