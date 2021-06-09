@@ -12,4 +12,4 @@ def test_connect(data):
 
 
 if __name__ == '__main__':
-    app.run()
+    socketio.run(app, port=int(os.environ.get('PORT', 443)))
