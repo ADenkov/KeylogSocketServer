@@ -13,4 +13,5 @@ def test_connect(data):
 
 
 if __name__ == '__main__':
-    socketio.run(app, print(port=int(os.environ.get('PORT', 5000))), debug=True)
+    print(int(os.environ.get('PORT', 5000)))
+    socketio.run(app, port=int(os.environ.get('PORT', 5000)), debug=True)
