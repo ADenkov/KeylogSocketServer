@@ -1,1 +1,1 @@
-gunicorn -k geventwebsocket.gunicorn.workers.GeventWebSocketWorker -w 1 socket_server:app
+web: gunicorn --worker-class socketio.sgunicorn.GeventSocketIOWorker --log-file=- socket_server:app
