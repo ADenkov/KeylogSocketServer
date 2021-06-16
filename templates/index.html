@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Keylogger Output</title>
+    <title>Logged Keys</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
-    <script src="{{ url_for('static', filename='scripts/socketio.js') }}"></script>
-    <style type="text/css">
-        #container {
-            width: 500px;
-            height: 200px;
-            padding-right: 20px;
-            overflow-y: auto;
-            background-color: aliceblue;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        .red {
-            color: red;
-        }
-    </style>
 </head>
-
 <body>
-    <h2>Logged Keys:</h2>
-    <div id="container">
-        <ul id="keylogger"></ul>
-    </div>
-</body>
+    <h1>Hi</h1>
+<!-- <script type="text/javascript">
+    $(document).ready(function() {
 
+        var socket = io.connect('http://localhost:5000');
+
+        socket.on('keylogger', function(data) {
+            $("#keylogs").append('<li>'+data+'</li>')
+        });
+    });
+</script> -->
+<ul id="keylogs"></ul>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+<script src="{{ url_for('static', filename='scripts/socketio.js') }}"></script>
+</body>
 </html>
