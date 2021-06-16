@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    localStorage.debug = '*';
     var socket = io();
-    
     console.log(socket)
 
     socket.on('connect', function () {
@@ -24,27 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(err.message);
     });
 
-    // socket.on('shit', data => {
-    //     console.log(data);
-    // });
-
-    // socket.on('keylogger', data => {
-    //     console.log(data["keylogged"]);
-    // });
-
-    socket.on('keylogger', data => {
-        console.log("Right spot: ", data);
-
-        var list = document.getElementById('keylogger');
-        var entry = document.createElement('li');
-        var text = data.replace(/'(.*?)'/g, '<span class="red">$1</span>');
-        $("#keylogger").append('<li>'+text+'</li>');
+    socket.on('shit', data => {
+        console.log(data);
     });
 
-
-    // socket.on('keylogger', function (data) {
-    //     console.log(data);
-    //     $("#keylogs").append('<li>' + data + '</li>');
-    // });
+    socket.on('keylogger', function (data) {
+        $("#keylogs").append('<li>' + data + '</li>');
+    });
 
 })
