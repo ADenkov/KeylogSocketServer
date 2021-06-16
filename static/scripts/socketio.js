@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     socket.on('disconnect', function () {
         console.log("Socket disconnected.");
         socket.socket.reconnect();
+        socket.reconnect();
     });
 
     socket.on('connect_error', (err) => {
