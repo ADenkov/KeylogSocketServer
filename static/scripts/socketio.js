@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    localStorage.debug = '*';
     var socket = io();
     
     console.log(socket)
