@@ -14,23 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Message received: ${data}`);
     });
 
-    socket.on('disconnect', function () {
-        console.log("Socket disconnected.");
-        socket.socket.reconnect();
+    socket.on('disconnect', data => {
+        console.log("Socket disconnected.", data.message);
         socket.reconnect();
     });
 
     socket.on('connect_error', (err) => {
         console.log(err.message);
     });
-
-    // socket.on('shit', data => {
-    //     console.log(data);
-    // });
-
-    // socket.on('keylogger', data => {
-    //     console.log(data["keylogged"]);
-    // });
 
     socket.on('keylogger', data => {
         console.log("Right spot: ", data);
